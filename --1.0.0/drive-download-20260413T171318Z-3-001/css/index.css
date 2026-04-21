@@ -203,6 +203,7 @@ header .container {
 }
 
 /* CASE styles end */
+
 /* OUR PROCESS styles start */
 
 .accordion{
@@ -216,13 +217,52 @@ header .container {
     border:1px solid #000;
     box-shadow: 0px 5px 0px #191a23;
     border-radius: 45px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 .accordion-item._show{
-    background-color: var(--color-main)
+    background-color: var(--color-main);
+    cursor:default;
 }
 
 .accordion-item:not(._show) .accordion-body{
     display:none;
+}
+
+.accordion-header{
+    display:flex;
+    align-items: center;
+    gap: 25px;
+}
+.accordion-number{
+    font-size: 45px;
+    font-weight: bold;
+}
+.accordion-header h3{
+    flex-grow: 1;
+    font-size: 24px;
+}
+.accordion-btn img{
+    width:20px;
+    height: 20px;
+
+}
+.accordion-btn{
+    height: 40px;
+    width: 40px;
+    background: var(--color-third);
+    border: 1px solid var(--color-second);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion-body{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-second);
+    font-size: 16px;
+
 }
 
 /* FOOTER styles start */
