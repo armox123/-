@@ -264,6 +264,80 @@ header .container {
     font-size: 16px;
 
 }
+/* OUR PROCESS styles end */
+
+/*  Testimonials styles start */
+.slides-container {
+  position: relative;
+  background-color: var(--color-second); /* Темный фон из примера */
+  color: var(--color-third);
+  padding: 40px;
+  border-radius: 20px;
+}
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 30px; /* Зазор между карточками */
+}
+.testimonial-item {
+  flex: 0 0 60%; /* Карточка занимает 60%, чтобы соседи были видны */
+  min-width: 300px;
+  opacity: 0.4;
+  transition: opacity 0.5s;
+}
+.testimonial-item.active {
+  opacity: 1;
+}
+.speech-bubble {
+  background: transparent;
+  border: 1px solid var(--color-main);
+  padding: 30px;
+  border-radius: 40px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -21px;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: #191a23;
+  border-left: 1px solid #b9ff66;
+  border-bottom: 1px solid #b9ff66;
+  transform: rotate(-45deg);
+}
+
+.author-info { padding-left: 60px; }
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+.author-info .name {
+  color: #b9ff66;
+  display: block;
+  font-weight: bold;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active { background-color: #b9ff66; }
+.prev-btn, .next-btn { background: none; border: none; cursor: pointer; }
+
+.dot.active {
+  color: #b9ff66; /* Или использовать иконку звездочки, как на картинке */
+}
+
 
 /* FOOTER styles start */
 .footer__inner {

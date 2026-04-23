@@ -20,3 +20,35 @@ for (const elem of acordion_items) {
         }
     });
 }
+
+const track = document.querySelector('.testimonials-track');
+const items = document.querySelectorAll('.testimonial-item');
+const dots = document.querySelectorAll('.dot');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+let index = 0;
+
+function update() {
+  const itemWidth = items[0].offsetWidth + 30; // ширина + gap
+  const centerOffset = (track.parentElement.offsetWidth - items[0].offsetWidth) / 2;
+  
+  // Сдвиг: положение карточки минус отступ для центрирования
+  track.style.transform = `translateX(${-index * itemWidth + centerOffset}px)`;
+
+  items.forEach((it, i) => it.classList.toggle('active', i === index));
+  dots.forEach((d, i) => d.classList.toggle('active', i === index));
+}
+
+nextBtn.onclick = () => {
+  if (index < items.length - 1) index++;
+  update();
+};
+
+prevBtn.onclick = () => {
+  if (index > 0) index--;
+  update();
+};
+
+// Пересчет при загрузке
+window.onload = update;
